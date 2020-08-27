@@ -1,3 +1,5 @@
+// game of thrones api
+
 function fetchBooks() {
   return fetch('https://anapioficeandfire.com/api/books')
   .then(resp => resp.json())
@@ -20,23 +22,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // pokemon api
 
-// function fetchPokemon() {
-//   return fetch('https://pokeapi.co/api/v2/pokemon')
-//   .then(resp => resp.json())
-//   .then(json => renderPokemon(json));
+function fetchPokemon() {
+  return fetch('https://pokeapi.co/api/v2/pokemon')
+  .then(resp => resp.json())
+  .then(json => renderPokemon(json));
 
-// }
+}
 
-// function renderPokemon(pokes) {
-//   const main = document.querySelector('main')
-//   total = pokes["results"]
-//   total.forEach(poke => {
-//     const h2 = document.createElement('h2')
-//     h2.innerHTML = poke.name
-//     main.appendChild(h2)
-//   })
-// }
+function renderPokemon(pokes) {
+  const main = document.querySelector('main')
+  total = pokes["results"]
+  total.forEach(poke => {
+    const h2 = document.createElement('h2')
+    h2.innerHTML = poke.name
+    main.appendChild(h2)
+  })
+}
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   fetchPokemon()
-// })
+document.addEventListener('DOMContentLoaded', function() {
+  fetchPokemon()
+})
